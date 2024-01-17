@@ -12,3 +12,30 @@ menu.onclick = () => {
     navmenu.classList.toggle('open');
 
 }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const sliderContainer = document.querySelector('.slider-container');
+        const sliderItems = document.querySelectorAll('.slider-item');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            const newTransformValue = -currentIndex * 100 + '%';
+            sliderContainer.style.transform = 'translateX(' + newTransformValue + ')';
+        }
+
+        function showPrevSlide() {
+            currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
+            updateSlider();
+        }
+
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % sliderItems.length;
+            updateSlider();
+        }
+
+        prevButton.addEventListener('click', showPrevSlide);
+        nextButton.addEventListener('click', showNextSlide);
+    });
+

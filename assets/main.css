@@ -21,11 +21,12 @@ header {
     padding: 20px 10%;
     border-bottom: transparent;
     backdrop-filter: blur(5px);
+    overflow: hidden;
 }
 
  .logo .img-logo {
     width: 10rem;
-    height: 8rem;
+    height: 7rem;
     overflow: hidden;
 }
 
@@ -79,16 +80,36 @@ section {
 }
 
 .main-home {
+    position: relative;
     width: 100%;
     height: 100vh;
     background-image: url('../assets/images/image2.jpg');
-    background-position:right;
+    background-position: right;
     background-size: contain;
     background-repeat: no-repeat;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     align-items: center;
     text-decoration: none;
+}
+
+.blob {
+    border-radius: 50px;
+    width: 5rem;
+    height: 7rem;
+    position: absolute;
+    background-color: yellow;
+    top: 0;
+    right: 0;
+}
+
+.blob2 {
+    border-radius: 50px;
+    position: absolute;
+    width: 5rem;
+    height: 7rem;
+    background-color: aqua;
+    top: 0;
 }
 
 .main-text h5 {
